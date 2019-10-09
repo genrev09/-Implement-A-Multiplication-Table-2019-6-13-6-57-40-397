@@ -22,3 +22,40 @@ AC3: The output should be a string represents the multiplication table. Suppose 
 * Please define all the methods according to your task diagram.
 * Please write down a test case using *given...when...then* pattern for a leaf block. Then implement the block to pass the test.
 * Please continue doing this work until all the requirement has been fulfilled.,
+
+Given: startNum, endNum
+When: IsStartNumLessThanOrEqualEndNum (startNum,endNum)
+Then: Boolean must be returned (if start number is really less than or equal end number)
+
+Given: startNum(equal to endNum), endNum
+When: IsStartNumLessThanOrEqualEndNum (startNum,endNum)
+Then: Boolean must be returned (if start number is really less than or equal end number)
+
+Given: startNum(greater than endNum), endNum
+When: IsStartNumLessThanOrEqualEndNum (startNum,endNum)
+Then: false must be returned since start number is greater than end number.
+
+Given: startNum, endNum
+When: IsStartNumAndEndNumBetweenRange (startNum, endNum)
+Then: Boolean must be returned (if startNum and endNum really is in between the range)
+
+Given: startNum, endNum (above range)
+When: IsStartNumAndEndNumBetweenRange (startNum, endNum)
+Then: false must be returned since end number is above range
+
+Given: startNum(less than range), endNum
+When: IsStartNumAndEndNumBetweenRange (startNum, endNum)
+Then: false must be returned since start number is less than range
+
+Given: startNum(greater than endNum), endNum
+When: CreateMultiplyTable (startNum, endNum)
+Then: null must be returned since startNum is greater than endNum
+
+
+Given: startNum(not within range), endNum
+When: CreateMultiplyTable (startNum, endNum)
+Then: "Start Number or End Number not within 1 to 1000" message must be prompted since start number is not within the range
+
+Given: startNum, endNum
+When: CreateMultiplyTable (startNum, endNum)
+Then: a String of multiply table must be returned
